@@ -4,16 +4,20 @@ import Link from 'next/link';
 
 const items = [
   {
-    title: 'Get started',
     links: [
-      { href: '/docs/overview', children: 'What is Markdoc?' },
-      { href: '/docs/getting-started', children: 'Installation' },
-      { href: '/docs/faq', children: 'FAQ' },
-      { href: '/sandbox', children: 'Try it out' }
+      { href: '/docs/introduction', children: 'Introduction' },
+      { href: '/docs/getting-started', children: 'Authentication' },
+      { href: '/docs/faq', children: 'Connected Accounts' },
+      { href: '/docs/faq', children: 'Errors' },
+      { href: '/docs/faq', children: 'Idempotent Requests' },
+      { href: '/docs/faq', children: 'Metadata' },
+      { href: '/sandbox', children: 'Pagination' },
+      { href: '/docs/faq', children: 'Request IDs' },
+      { href: '/docs/faq', children: 'Versioning' }
     ]
   },
   {
-    title: 'Core concepts',
+    title: 'Core resources',
     links: [
       { href: '/docs/syntax', children: 'Syntax and schema' },
       { href: '/docs/nodes', children: 'Nodes' },
@@ -29,19 +33,20 @@ const items = [
     ]
   },
   {
+    title: 'Connect',
+    links: [{ href: '/docs/frontmatter', children: 'Accounts' }]
+  },
+  {
+    title: 'Webhooks',
+    links: [{ href: '/docs/frontmatter', children: 'Webhook Endpoints' }]
+  },
+  {
     title: 'Integration guides',
     links: [
       { href: '/docs/examples', children: 'Common examples' },
       { href: '/docs/examples/html', children: 'Using with HTML' },
       { href: '/docs/nextjs', children: 'Using with Next.js' },
       { href: '/docs/examples/react', children: 'Using with React' }
-    ]
-  },
-  {
-    title: 'Advanced concepts',
-    links: [
-      { href: '/docs/frontmatter', children: 'Frontmatter' },
-      { href: '/docs/partials', children: 'Partials' }
     ]
   }
 ];
@@ -53,7 +58,7 @@ export function SideNav() {
     <nav className="sidenav">
       {items.map((item) => (
         <div key={item.title}>
-          <h3>{item.title}</h3>
+          {!!item.title && <h3>{item.title}</h3>}
           <ul className="flex column">
             {item.links.map((link) => {
               const active = router.pathname === link.href;

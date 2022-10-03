@@ -1,5 +1,5 @@
 ---
-title: A powerful, flexible, Markdown-based authoring framework
+title: Free your customer data, build your customer stack
 description: From personal blogs to massive documentation sites, Markdoc is a content authoring system that grows with you.
 ---
 
